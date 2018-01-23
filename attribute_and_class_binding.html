@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attribute and Class Binding</title>
+</head>
+<style>
+  .is-green { color: green; }
+</style>
+<body>
+  <div id="app">
+    <h1 :class="{ 'is-green': flag }">Title</h1>
+    <button @click="flag = true">change color</button>
+  </div>
+  <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        flag: false
+      }
+    });
+  </script>
+</body>
+</html>

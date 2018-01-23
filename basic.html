@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Data Binding Demo</title>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-model="message">
+  <p>the value of the input is {{ message }}</p>
+</div>
+<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello World'
+    }
+  })
+</script>
+</body>
+</html>

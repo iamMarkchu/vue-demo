@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+</head>
+<body>
+<div id="app" class="container">
+  <ck-modal :is-visible="showModal" @close="showModal = false">
+    <template slot="header">{{ modal.title }}</template>
+    {{ modal.body }}
+  </ck-modal>
+  <button @click="showModal = true">Click</button>
+</div>
+<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+<script src="./modal.js"></script>
+</body>
+</html>

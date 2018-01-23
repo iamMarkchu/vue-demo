@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lists Demo</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="name in names">{{ name }}</li>
+    </ul>
+    <input type="text" v-model="name">
+    <button @click="add">Add</button>
+  </div>
+  <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        names: ['mark', 'yuki', 'jerry', 'davis', 'others'],
+        name: ''
+      },
+      methods: {
+        add() {
+          this.names.push(this.name);
+          this.name = '';
+        }
+      }
+    });
+ </script>
+</body>
+</html>

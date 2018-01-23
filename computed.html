@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>computed demo</title>
+</head>
+<style>
+  .incompleted {
+    background-color: #e0e0e0;
+  }
+</style>
+<body>
+  <div id="app">
+    <h2>All Tasks</h2>
+    <ul>
+      <li v-for="task in tasks" v-text="task.description" :class="{ incompleted: !task.status }"></li>
+    </ul>
+    <h2>InCompleted Tasks</h2>
+    <ul>
+      <li v-for="task in inCompletedTasks" v-text="task.description" :class="{ incompleted: !task.status }"></li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        tasks: [
+          { description: 'do homework', status: true },
+          { description: 'do homework2', status: false },
+          { description: 'do homework3', status: true },
+          { description: 'do homework4', status: false },
+          { description: 'do homework5', status: true }
+        ]
+      },
+      computed: {
+        inCompletedTasks() {
+          return this.tasks.filter(task => !task.status)
+        }
+      }
+    });
+  </script>
+</body>
+</html>
